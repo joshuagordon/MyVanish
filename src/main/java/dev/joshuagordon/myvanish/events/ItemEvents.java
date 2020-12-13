@@ -1,6 +1,7 @@
 package dev.joshuagordon.myvanish.events;
 
 import dev.joshuagordon.myvanish.MyVanish;
+
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,7 +16,6 @@ public class ItemEvents implements Listener {
     @EventHandler
     // Listen for Entity Item Pickup Event
     public void onPickup(EntityPickupItemEvent event) {
-
         // Check if entity is player
         if (event.getEntity() instanceof Player) {
             // Cast entity to player
@@ -30,11 +30,8 @@ public class ItemEvents implements Listener {
     @EventHandler
     // Listen for Entity Item Drop Event
     public void onDrop(PlayerDropItemEvent event) {
-
-        Player player = event.getPlayer();
-
         // Cancel event for vanished players
-        if (plugin.getVanishedPlayers().contains(player))
+        if (plugin.getVanishedPlayers().contains(event.getPlayer()))
             event.setCancelled(true);
     }
 }
