@@ -1,19 +1,19 @@
 package dev.joshuagordon.myvanish.commands;
 
+// Bukkit Imports
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
+// Import Main Class
 import dev.joshuagordon.myvanish.MyVanish;
 
 public class jVanish implements CommandExecutor {
 
+    // Construct class with instance of Main class for access to methods
     private final MyVanish plugin;
-
     public jVanish(MyVanish instance) {
         plugin = instance;
     }
@@ -21,11 +21,12 @@ public class jVanish implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
+        // Store pluginPrefix and server variables
         String pluginPrefix = plugin.getConfig().getString("pluginPrefix");
-        Server server = plugin.getServer();
 
+        // Check if command sender is a player
         if(sender instanceof Player) {
-
+            // sender is player, so cast to player
             Player player = (Player) sender;
 
             // Check if the /v or /vanish commands were used
@@ -75,6 +76,7 @@ public class jVanish implements CommandExecutor {
                         // Action Bar Message
                         String message = "§a§lYou are invisible to other players!";
 
+                        // Show ActionBarMessage asynchronously, checks every 40 ticks if they're still vanished
                         Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, (runnable) -> {
                             if (plugin.getVanishedPlayers().contains(player)) {
                                 player.sendActionBar(message);
