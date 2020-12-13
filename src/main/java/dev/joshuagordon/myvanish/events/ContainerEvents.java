@@ -33,12 +33,13 @@ public class ContainerEvents implements Listener {
         if(plugin.getVanishedPlayers().contains(player)) {
             // Check clicked block is not null
             if(clickedBlock != null) {
+                Material clickedBockType = clickedBlock.getType();
                 // Check if clicked block is a container
-                if (clickedBlock.getType() == Material.CHEST
-                    || clickedBlock.getType() == Material.TRAPPED_CHEST
-                    || clickedBlock.getType() == Material.ENDER_CHEST
-                    || clickedBlock.getType().name().endsWith("SHULKER_BOX") // Should cover all shulker boxes
-                    || clickedBlock.getType() == Material.BARREL) {
+                if (clickedBockType == Material.CHEST
+                    || clickedBockType == Material.TRAPPED_CHEST
+                    || clickedBockType == Material.ENDER_CHEST
+                    || clickedBockType.name().endsWith("SHULKER_BOX") // Should cover all shulker boxes
+                    || clickedBockType == Material.BARREL) {
 
                     // Cancel open
                     event.setCancelled(true);
@@ -47,8 +48,8 @@ public class ContainerEvents implements Listener {
                     Inventory inv = null;
                     Inventory sinv;
 
-                    if (clickedBlock.getType() == Material.CHEST ||
-                        clickedBlock.getType() == Material.TRAPPED_CHEST) {
+                    if (clickedBockType == Material.CHEST ||
+                        clickedBockType == Material.TRAPPED_CHEST) {
 
                         // Create chest
                         Chest chest = (Chest) clickedBlock.getState();
@@ -62,10 +63,11 @@ public class ContainerEvents implements Listener {
                         // Show duplicated inv to player
                         player.openInventory(sinv);
                     }
-                    else if (clickedBlock.getType() == Material.ENDER_CHEST) {
+                    else if (clickedBockType == Material.ENDER_CHEST) {
+                        // Show player's own enderchest to them
                         player.openInventory(player.getEnderChest());
                     }
-                    else if (clickedBlock.getType().name().endsWith("SHULKER_BOX")) {
+                    else if (clickedBockType.name().endsWith("SHULKER_BOX")) {
 
                         // Create chest
                         ShulkerBox chest = (ShulkerBox) clickedBlock.getState();
@@ -79,7 +81,7 @@ public class ContainerEvents implements Listener {
                         // Show duplicated inv to player
                         player.openInventory(sinv);
                     }
-                    else if (clickedBlock.getType() == Material.BARREL) {
+                    else if (clickedBockType == Material.BARREL) {
 
                         // Create chest
                         Barrel chest = (Barrel) clickedBlock.getState();
