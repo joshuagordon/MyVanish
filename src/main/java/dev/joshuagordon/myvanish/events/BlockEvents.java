@@ -4,6 +4,7 @@ import dev.joshuagordon.myvanish.MyVanish;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
 import org.bukkit.event.EventHandler;
@@ -46,26 +47,34 @@ public class BlockEvents implements Listener {
     }
 
     @EventHandler
+    // Listen for interactions with doors / pressure plates / buttons / fence gates / levers and cancel
+    // for vanished players.
     public void onInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         String pluginPrefix = plugin.getConfig().getString("pluginPrefix");
+        Block clickedBlock = event.getClickedBlock();
 
         // Check if player vanished
         if(plugin.getVanishedPlayers().contains(player)) {
             // Make sure air was not clicked
-            if (event.getClickedBlock() != null) {
+            if (clickedBlock != null) {
+                Material clickedBlockType = clickedBlock.getType();
                 // Check if door / pressure plate / button / fence / lever was clicked
-                if (event.getClickedBlock().getType().name().endsWith("DOOR") ||
-                    event.getClickedBlock().getType().name().endsWith("PRESSURE_PLATE") ||
-                    event.getClickedBlock().getType().name().endsWith("BUTTON") ||
-                    event.getClickedBlock().getType().name().endsWith("FENCE_GATE") ||
-                    event.getClickedBlock().getType() == Material.LEVER) {
+                if (clickedBlockType.name().endsWith("DOOR") ||
+                    clickedBlockType.name().endsWith("BUTTON") ||
+                    clickedBlockType.name().endsWith("FENCE_GATE") ||
+                    clickedBlockType == Material.LEVER) {
 
                     // Cancel event
                     event.setCancelled(true);
                     // Send message
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                             pluginPrefix + "&r&c You &c&lcannot&r&c interact with this."));
+                }
+                // Same logic except no message for pressure plates, due to spam in chat
+                else if (clickedBlockType.name().endsWith("PRESSURE_PLATE")) {
+                    // Cancel event
+                    event.setCancelled(true);
                 }
             }
         }
