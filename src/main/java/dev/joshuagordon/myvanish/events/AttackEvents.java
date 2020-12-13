@@ -1,7 +1,8 @@
 package dev.joshuagordon.myvanish.events;
 
+// Import Main Class
 import dev.joshuagordon.myvanish.MyVanish;
-
+// Bukkit Imports
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -13,6 +14,7 @@ import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 
 public class AttackEvents implements Listener {
 
+    // Construct class with instance of Main class for access to Main methods
     private final MyVanish plugin;
     public AttackEvents(MyVanish instance) { plugin = instance; }
 
@@ -71,13 +73,14 @@ public class AttackEvents implements Listener {
     @EventHandler
     // Listen for mobs targetting vanished players
     public void onTarget(EntityTargetLivingEntityEvent event) {
+        // Check if target is a player
+        if (event.getTarget() instanceof Player) {
+            // Cast target to player
+            Player player = (Player) event.getTarget();
 
-        Entity target = event.getTarget();
-
-        if (target instanceof Player) {
-            Player player = (Player) target;
-
+            // Check if player is vanished
             if(plugin.getVanishedPlayers().contains(player)) {
+                // Cancel event
                 event.setCancelled(true);
             }
         }
