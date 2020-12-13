@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import dev.joshuagordon.myvanish.commands.*;
 import dev.joshuagordon.myvanish.events.*;
+
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -74,13 +75,9 @@ public class MyVanish extends JavaPlugin {
         PluginDescriptionFile pdfFile = this.getDescription();
         this.logger.info(ChatColor.translateAlternateColorCodes('&',
             pluginPrefix + "&r&8 " + pdfFile.getName() + " is now disabled."));
-
-        // Fail-safe Save Config, in case the code didn't already save it
-        saveConfig();
     }
 
     public void setupConfig() {
-
         // Create strings
         String fakejoinMessage = ChatColor.translateAlternateColorCodes('&',
                 "&e%player% joined the game");
