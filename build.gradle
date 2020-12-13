@@ -12,28 +12,23 @@ plugins {
 }
 
 group = "dev.joshuagordon"
-version = "1.4"
+version = "1.5"
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
-    maven {
-        url = 'https://papermc.io/repo/repository/maven-public/'
-    }
+    maven { url = 'https://papermc.io/repo/repository/maven-public/' }
     maven {
         name = 'sonatype-oss'
         url = 'https://oss.sonatype.org/content/repositories/snapshots/'
     }
-    maven {
-        url = "https://repo.maven.apache.org/maven2/"
-    }
+    maven { url = "https://repo.maven.apache.org/maven2/" }
     mavenCentral()
     mavenLocal()
 }
 
 dependencies {
-
     // Use JUnit test framework for unit tests
     testImplementation 'junit:junit:4.13'
 
