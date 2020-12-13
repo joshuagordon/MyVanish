@@ -1,0 +1,32 @@
+name: MyVanish
+main: dev.joshuagordon.myvanish.MyVanish
+version: 1.4
+author: Joshua Gordon
+description: "A basic plugin that allows the user to vanish."
+api-version: 1.16
+commands:
+  v:
+    usage: /<command>
+    description: Toggle vanish
+    permission: MyVanish.vanish
+    permission-message: "[My Vanish] You don't have the permission (<permission>) to vanish."
+  vanish:
+    usage: /<command>
+    description: Toggle vanish
+    permission: MyVanish.vanish
+    permission-message: "[My Vanish] You don't have the permission (<permission>) to vanish."
+  fakejoin:
+    usage: /<command>
+    description: Send a fake join message to the chat
+    permission: MyVanish.fakejoin
+    permission-message: "[My Vanish] You don't have the permission (<permission>) to fake join / leave."
+  fakeleave:
+    usage: /<command>
+    description: Send a fake leave message to the chat
+    permission: MyVanish.fakejoin
+    permission-message: "[My Vanish] You don't have the permission (<permission>) to fake join / leave."
+  myv:
+    usage: /<command>
+    description: Base command for plugin
+    permission: MyVanish.base
+    permission-message: "[My Vanish] You don't have the permission: <permission>."
