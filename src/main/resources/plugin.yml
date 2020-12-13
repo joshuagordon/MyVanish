@@ -1,6 +1,6 @@
 name: MyVanish
 main: dev.joshuagordon.myvanish.MyVanish
-version: 1.4
+version: 1.5
 author: Joshua Gordon
 description: "A basic plugin that allows the user to vanish."
 api-version: 1.16
