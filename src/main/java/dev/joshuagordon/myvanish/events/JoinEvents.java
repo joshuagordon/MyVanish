@@ -15,13 +15,9 @@ public class JoinEvents implements Listener {
     @EventHandler
     // Listen for Player Join Event
     public void onJoin(PlayerJoinEvent event) {
-
-        // Store player in variable
-        Player player = event.getPlayer();
-
         // Hide vanished players from newly joined players
         for (Player vanishedPlayer : plugin.getVanishedPlayers()) {
-            player.hidePlayer(plugin, vanishedPlayer);
+            event.getPlayer().hidePlayer(plugin, vanishedPlayer);
         }
     }
 }
