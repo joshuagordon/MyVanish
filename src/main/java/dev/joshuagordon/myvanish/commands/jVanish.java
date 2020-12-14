@@ -63,7 +63,7 @@ public class jVanish implements CommandExecutor {
 
                         // Send player a message
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&a You disappeared!"));
+                            pluginPrefix + "&r&a You disappeared!"));
 
                         // Enter god and fly mode
                         player.setAllowFlight(true);
@@ -74,7 +74,8 @@ public class jVanish implements CommandExecutor {
                         plugin.addVanishedPlayer(player);
 
                         // Action Bar Message
-                        String message = "§a§lYou are invisible to other players!";
+                        String message = ChatColor.translateAlternateColorCodes('&',
+                            "&a&lYou are invisible to other players!");
 
                         // Show ActionBarMessage asynchronously, checks every 40 ticks if they're still vanished
                         Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, (runnable) -> {

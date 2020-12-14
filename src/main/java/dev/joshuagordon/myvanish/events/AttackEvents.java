@@ -4,7 +4,6 @@ package dev.joshuagordon.myvanish.events;
 import dev.joshuagordon.myvanish.MyVanish;
 // Bukkit Imports
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

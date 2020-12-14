@@ -5,12 +5,15 @@ import java.util.List;
 import java.util.Objects;
 import java.util.logging.Logger;
 
+// Import commands and events
 import dev.joshuagordon.myvanish.commands.*;
 import dev.joshuagordon.myvanish.events.*;
-
+// Adventure Imports
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+// Bukkit Imports
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,7 +24,7 @@ public class MyVanish extends JavaPlugin {
     // ArrayList for Vanished Players
     private final List<Player> vanishedPlayers = new ArrayList<>();
     // Obtain plugin prefix from config
-    private final String pluginPrefix = getConfig().getString("pluginPrefix");
+    private final Component pluginPrefix = MiniMessage.get().parse(getConfig().getString("pluginPrefix"));
 
     // Getter and setters
     public List<Player> getVanishedPlayers () { return vanishedPlayers; }
