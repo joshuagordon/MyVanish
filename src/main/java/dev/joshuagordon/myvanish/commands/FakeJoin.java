@@ -39,7 +39,7 @@ public class FakeJoin implements CommandExecutor {
                         joinMessage = joinMessage.replace("%player%", player.getName());
                         // Send message to sender
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&a Join message broadcasted."));
+                                pluginPrefix + "&a Join message broadcasted."));
                         // Broadcast fake join message
                         Bukkit.broadcastMessage(joinMessage);
                         return true;
@@ -47,7 +47,7 @@ public class FakeJoin implements CommandExecutor {
                     else {
                         // Notify sender that join message was null
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&c Join message null."));
+                                pluginPrefix + "&c Join message null."));
                     }
                 }
                 else if (args.length == 1) {
@@ -57,7 +57,7 @@ public class FakeJoin implements CommandExecutor {
                         joinMessage = joinMessage.replace("%player%", args[0]);
                         // Send message to sender
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&a Join message broadcasted."));
+                                pluginPrefix + "&a Join message broadcasted."));
                         // Broadcast fake join message
                         Bukkit.broadcastMessage(joinMessage);
                         return true;
@@ -65,7 +65,7 @@ public class FakeJoin implements CommandExecutor {
                     else {
                         // Notify sender that join message was null
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&c Join message null."));
+                                pluginPrefix + "&c Join message null."));
                         return false;
                     }
                 }
@@ -75,7 +75,7 @@ public class FakeJoin implements CommandExecutor {
                 if (args.length == 0) {
                     // Username not specified, error message
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                            pluginPrefix + "&r&c Please specify a username."));
+                            pluginPrefix + "&c Please specify a username."));
                     return false;
                 }
                 else if (args.length == 1) {
@@ -85,14 +85,14 @@ public class FakeJoin implements CommandExecutor {
                         joinMessage = joinMessage.replace("%player%", args[0]);
                         // Send message to sender
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&a Join message broadcasted."));
+                                pluginPrefix + "&a Join message broadcasted."));
                         // Broadcast fake join message
                         Bukkit.broadcastMessage(joinMessage);
                         return true;
                     }
                     else {
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&c Join message null."));
+                                pluginPrefix + "&c Join message null."));
                         return false;
                     }
                 }
@@ -113,7 +113,7 @@ public class FakeJoin implements CommandExecutor {
                         leaveMessage = leaveMessage.replace("%player%", player.getName());
                         // Send message to player
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&a Leave message broadcasted."));
+                                pluginPrefix + "&a Leave message broadcasted."));
                         // Broadcast fake join message
                         Bukkit.broadcastMessage(leaveMessage);
                         return true;
@@ -121,7 +121,7 @@ public class FakeJoin implements CommandExecutor {
                     else {
                         // Notify player that leave message is null
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&c Leave message null."));
+                                pluginPrefix + "&c Leave message null."));
                         return false;
                     }
                 }
@@ -132,7 +132,7 @@ public class FakeJoin implements CommandExecutor {
                         leaveMessage = leaveMessage.replace("%player%", args[0]);
                         // Send message to player
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&a Leave message broadcasted."));
+                                pluginPrefix + "&a Leave message broadcasted."));
                         // Broadcast fake join message
                         Bukkit.broadcastMessage(leaveMessage);
                         return true;
@@ -140,7 +140,7 @@ public class FakeJoin implements CommandExecutor {
                     else {
                         // Notify player that leave message is null
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&c Leave message null."));
+                                pluginPrefix + "&c Leave message null."));
                         return false;
                     }
                 }
@@ -150,7 +150,7 @@ public class FakeJoin implements CommandExecutor {
                 if (args.length == 0) {
                     // Username not specified, error message
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                            pluginPrefix + "&r&c Please specify a username."));
+                            pluginPrefix + "&c Please specify a username."));
                     return false;
                 }
                 else if (args.length == 1) {
@@ -160,7 +160,7 @@ public class FakeJoin implements CommandExecutor {
                         leaveMessage = leaveMessage.replace("%player%", args[0]);
                         // Send message to sender
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&c Leave message broadcasted."));
+                                pluginPrefix + "&c Leave message broadcasted."));
                         // Broadcast fake join message
                         Bukkit.broadcastMessage(leaveMessage);
                         return true;
@@ -168,7 +168,7 @@ public class FakeJoin implements CommandExecutor {
                     else {
                         // Notify sender that message was null
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&c Leave message null."));
+                                pluginPrefix + "&c Leave message null."));
                     }
                 }
             }

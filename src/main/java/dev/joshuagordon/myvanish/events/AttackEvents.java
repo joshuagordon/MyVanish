@@ -38,7 +38,7 @@ public class AttackEvents implements Listener {
 
                 // Send player message
                 damager.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                    pluginPrefix + "&r&c You &c&lcannot&r&c attack mobs / players in vanish."));
+                    pluginPrefix + "&c You &c&lcannot&c attack mobs / players in vanish."));
             }
         }
     }
@@ -64,7 +64,7 @@ public class AttackEvents implements Listener {
 
                 // Send player message
                 shooter.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                        pluginPrefix + "&r&c You &c&lcannot&r&c shoot bows in vanish."));
+                        pluginPrefix + "&c You &c&lcannot&c shoot bows in vanish."));
             }
         }
     }

@@ -17,13 +17,19 @@ ext {
 }
 
 repositories {
-    maven { url = 'https://papermc.io/repo/repository/maven-public/' }
+    maven {
+        url = 'https://papermc.io/repo/repository/maven-public/'
+    }
     maven {
         name = 'sonatype-oss'
         url = 'https://oss.sonatype.org/content/repositories/snapshots/'
     }
-    maven { url = "https://repo.maven.apache.org/maven2/" }
-    maven { url = "https://mvnrepository.com/artifact/net.md-5/bungeecord-api" }
+    maven {
+        url = "https://repo.maven.apache.org/maven2/"
+    }
+    maven {
+        url = "https://mvnrepository.com/artifact/net.md-5/bungeecord-api"
+    }
     mavenCentral()
     mavenLocal()
 }
@@ -51,14 +57,6 @@ test {
 sourceSets {
     test.compileClasspath += configurations.compileOnly
     test.runtimeClasspath += configurations.compileOnly
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from(components.java)
-        }
-    }
 }
 
 processResources {

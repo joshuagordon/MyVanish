@@ -33,7 +33,7 @@ public class BaseCommands implements CommandExecutor {
 
                 // Notify sender of reload
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                        pluginPrefix + "&r&a Reload successful."));
+                        pluginPrefix + "&a Reload successful."));
 
                 return true;
             }

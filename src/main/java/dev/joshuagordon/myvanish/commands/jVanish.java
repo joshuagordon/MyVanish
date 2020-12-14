@@ -45,7 +45,7 @@ public class jVanish implements CommandExecutor {
 
                         // Send message to player
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                pluginPrefix + "&r&a You appeared out of thin air!"));
+                                pluginPrefix + "&a You appeared out of thin air!"));
 
                         // Exit god and fly mode
                         player.setAllowFlight(false);
@@ -63,7 +63,7 @@ public class jVanish implements CommandExecutor {
 
                         // Send player a message
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                            pluginPrefix + "&r&a You disappeared!"));
+                            pluginPrefix + "&a You disappeared!"));
 
                         // Enter god and fly mode
                         player.setAllowFlight(true);
@@ -103,7 +103,7 @@ public class jVanish implements CommandExecutor {
             if(args.length == 0) {
                 // Sender was console, this command was not supported for console use.
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                        pluginPrefix + "&r&c This command &c&lcannot&r&c be used from the console."));
+                        pluginPrefix + "&c This command &c&lcannot&c be used from the console."));
 
                 return false;
             }
