@@ -45,11 +45,6 @@ public class MyVanish extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Console Enable Message
-        PluginDescriptionFile pdfFile = this.getDescription();
-        this.logger.info(ChatColor.translateAlternateColorCodes('&',
-                pluginPrefix + "&r&8 " + pdfFile.getName() + " is now enabled."));
-
         // Register Commands
         Objects.requireNonNull(getCommand("v")).setExecutor(new jVanish(this));
         Objects.requireNonNull(getCommand("vanish")).setExecutor(new jVanish(this));
@@ -67,14 +62,6 @@ public class MyVanish extends JavaPlugin {
         pm.registerEvents(new ContainerEvents(this), this);
         pm.registerEvents(new ItemEvents(this), this);
         pm.registerEvents(new JoinEvents(this), this);
-    }
-
-    @Override
-    public void onDisable() {
-        // Console Disable Message
-        PluginDescriptionFile pdfFile = this.getDescription();
-        this.logger.info(ChatColor.translateAlternateColorCodes('&',
-            pluginPrefix + "&r&8 " + pdfFile.getName() + " is now disabled."));
     }
 
     public void setupConfig() {
